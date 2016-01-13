@@ -3,8 +3,7 @@ class AtletaProfissional < Atleta
   attr_writer :treinador
 
   def initialize(nome, idade, treinador)
-    @nome = nome
-    @idade = idade
+    super(nome, idade)
     @treinador = treinador
   end
 
