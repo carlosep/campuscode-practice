@@ -7,17 +7,17 @@ end
 
 def menu
   menu = {}
-  puts "Gostaria de adicionar um novo atleta a Agenda™?"
-  puts "1- sim"
-  puts "2- nao"
+  puts "Gostaria de adicionar um novo atleta à Agenda™?"
+  puts "1 - sim"
+  puts "2 - não"
   menu[:cadastrar] = ler_valor
   if menu[:cadastrar] == '1'
-    puts "Qual e o nome do atleta"
+    puts "Insira o nome do atleta"
     menu[:nome] = ler_valor
-    puts "Qual e a idade de #{menu[:nome]}"
+    puts "Insira a idade de #{menu[:nome]}"
     menu[:idade] = ler_valor
 
-    puts "É profissional? 1-sim 2-nao"
+    puts "#{menu[:nome]} é profissional? 1-sim 2-nao"
     menu[:pro] = ler_valor
 
     if menu[:pro] == '1'
@@ -48,13 +48,10 @@ end
 puts "|-------------Bem vindo a Agenda™-------------|"
 
 atletas = []
-
 loop do
-  menu_op = menu
-  break if menu_op[:cadastrar] != '1'
-  atletas << criar_atleta(menu_op)
+  dados = menu
+  break if dados[:cadastrar] != '1'
+  atletas << criar_atleta(dados)
 end
 
 listar_atletas(atletas)
-
-
