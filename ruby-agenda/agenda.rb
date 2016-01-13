@@ -1,6 +1,8 @@
 load "atleta.rb"
 load "atleta_profissional.rb"
 
+##### MÉTODOS #####
+
 def ler_valor
   gets.chomp
 end
@@ -10,8 +12,8 @@ def menu
   puts "Gostaria de adicionar um novo atleta à Agenda™?"
   puts "1 - sim"
   puts "2 - não"
-  menu[:cadastrar] = ler_valor
-  if menu[:cadastrar] == '1'
+  op = ler_valor
+  if op == '1'
     puts "Insira o nome do atleta"
     menu[:nome] = ler_valor
     puts "Insira a idade de #{menu[:nome]}"
@@ -24,10 +26,10 @@ def menu
       puts "Qual o nome do treinador?"
       menu[:treinador] = ler_valor
     end
+    menu
   else
     puts "--Cadastro encerrado--"
   end
-  menu
 end
 
 def criar_atleta(dados)
@@ -45,12 +47,15 @@ def listar_atletas(atletas)
   end
 end
 
+##### EXECUÇÃO #####
+
+
 puts "|-------------Bem vindo a Agenda™-------------|"
 
 atletas = []
 loop do
   dados = menu
-  break if dados[:cadastrar] != '1'
+  break if !dados
   atletas << criar_atleta(dados)
 end
 
