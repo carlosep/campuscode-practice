@@ -6,6 +6,10 @@ class Atleta
     @idade = idade
   end
 
+  def exercico
+
+  end
+
   def to_s
     "Atleta: #{@nome}, idade: #{@idade}"
   end
