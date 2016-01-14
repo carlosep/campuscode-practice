@@ -1,5 +1,7 @@
 # Notas oficiais do Alan
 
+Comandos Executados no dia 13/01/2016
+
 ```ruby
 rails new blog_jan
 
