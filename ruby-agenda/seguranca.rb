@@ -6,4 +6,8 @@ class Seguranca
     @categoria = categoria
     @matricula = matricula
   end
+  
+  class Exercicio
+
+  end
 end
