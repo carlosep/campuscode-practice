@@ -1,38 +1,49 @@
-== Notas oficiais do Alan
+# Notas oficiais do Alan
 
 ```ruby
 rails new blog_jan
 
 cd blog_jan
-
+```
 # navegamos por todas as pastas do projeto
-
 # adicionei a seguinte linha no Gemfile
+```ruby
 gem 'pry'
+```
 
 # rodei o comando na pasta do projeto para instalar a nova gem
+```ruby
 bundle install
+```
 
 # para executar o projeto
+```ruby
 rails server # ou rails s
+```
 
 # criamos um scaffold para post
 # esse comando cria uma estrutara para post com dois atributos title e body
+```ruby
 rails generate scaffold post title:text body:text
+```
 
 # Analisamos juntos os comandos e arquivos executados pelo scaffold
-
 # para ver as rotas do projeto
+```ruby
 rake routes
+```
 
 # no browser acessamos as novas rotas
 http://localhost:3000/posts
 http://localhost:3000/posts/new
 
 # abrimos o rails console, que é um irb com o projeto rails carregado
+```ruby
 rails console
+```
 
 # E executamos algumas operações CRUD
+```ruby
 Post.all
 post = Post.create(title:"Um post", body: "Conteudo")
 Post.all
@@ -58,7 +69,9 @@ post1.title = "Novo title 1"
 post1.title_changed?
 post1.save
 post1.title_changed?
+```
 
 #para abrir o console do banco de dados definido da aplicação
+```ruby
 rails dbconsole # ou rails db
 ```
