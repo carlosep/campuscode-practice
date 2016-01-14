@@ -13,4 +13,10 @@ class Atleta
   def to_s
     "Atleta: #{@nome}, idade: #{@idade}"
   end
+  
+  def executar_exercicios
+    exercicios.each do |a|
+      puts "Executou #{a.descricao}"
+    end
+  end
 end
