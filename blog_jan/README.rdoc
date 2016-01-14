@@ -1,28 +1,64 @@
-== README
+== Notas oficiais do Alan
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+´´´ruby
+rails new blog_jan
 
-Things you may want to cover:
+cd blog_jan
 
-* Ruby version
+# navegamos por todas as pastas do projeto
 
-* System dependencies
+# adicionei a seguinte linha no Gemfile
+gem 'pry'
 
-* Configuration
+# rodei o comando na pasta do projeto para instalar a nova gem
+bundle install
 
-* Database creation
+# para executar o projeto
+rails server # ou rails s
 
-* Database initialization
+# criamos um scaffold para post
+# esse comando cria uma estrutara para post com dois atributos title e body
+rails generate scaffold post title:text body:text
 
-* How to run the test suite
+# Analisamos juntos os comandos e arquivos executados pelo scaffold
 
-* Services (job queues, cache servers, search engines, etc.)
+# para ver as rotas do projeto
+rake routes
 
-* Deployment instructions
+# no browser acessamos as novas rotas
+http://localhost:3000/posts
+http://localhost:3000/posts/new
 
-* ...
+# abrimos o rails console, que é um irb com o projeto rails carregado
+rails console
 
+# E executamos algumas operações CRUD
+Post.all
+post = Post.create(title:"Um post", body: "Conteudo")
+Post.all
+post = Post.find(1) # encontra um post com o id 1
+Post.first
+Post.last
+post.title = "novo titulo"
+post.save
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Post.update(body:"novo conteudo")
+
+post.destroy
+Post.all
+
+post1 = Post.create(title:"Um post 1", body: "Conteudo")
+post2 = Post.create(title:"Um post 2", body: "Conteudo")
+post3 = Post.create(title:"Um post 3", body: "Conteudo")
+
+Post.all
+
+post1.title_changed?
+post1.title = "Novo title 1"
+post1.title_changed?
+post1.save
+post1.title_changed?
+
+#para abrir o console do banco de dados definido da aplicação
+rails dbconsole # ou rails db
+´´´
