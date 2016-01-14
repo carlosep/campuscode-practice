@@ -1,6 +1,6 @@
 == Notas oficiais do Alan
 
-´´´ruby
+```ruby
 rails new blog_jan
 
 cd blog_jan
@@ -61,4 +61,4 @@ post1.title_changed?
 
 #para abrir o console do banco de dados definido da aplicação
 rails dbconsole # ou rails db
-´´´
+```
